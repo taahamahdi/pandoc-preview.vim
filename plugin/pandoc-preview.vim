@@ -15,7 +15,7 @@ let g:pandoc_generate_pdf_dir = get(g:, 'pandoc_generate_pdf_dir', '')
 function! s:PandocGenerateFile()
     silent exec 'lcd %:p:h'
     if exists('g:pandoc_path')
-        let response = system(printf("%s %s %s %s", 
+        let response = system(printf("%s %s %s %s %s", 
                                         \shellescape(g:pandoc_path), 
                                         \'-o',
                                         \s:PdfFileName(),
