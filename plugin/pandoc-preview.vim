@@ -19,7 +19,8 @@ function! s:PandocGenerateFile()
                                         \shellescape(g:pandoc_path), 
                                         \'-o',
                                         \s:PdfFileName(),
-                                        \shellescape(expand('%'))))
+                                        \shellescape(expand('%')),
+                                        \'-V geometry:margin=1in'))
         if (match(response, 'Error') != -1)
             echo response
             return 1
